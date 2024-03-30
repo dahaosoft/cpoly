@@ -4,5 +4,5 @@ struct CanRun
 {
     void (*run)();
 
-    _INTERFACE_
+    CPOLY_INTERFACE
 };

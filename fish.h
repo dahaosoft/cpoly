@@ -4,9 +4,9 @@
 #include "canfly.h"
 #include "canrun.h"
 
-CLASS(Fish)
-    IMPL(CanFly);
-FILES_BEGIN(Fish)
+CPOLY_CLASS(Fish)
+    CPOLY_IMPL(CanFly);
+CPOLY_FIELD_BEGIN(Fish)
     char *name;
     int age;
-FILES_END(Fish)
+CPOLY_FIELD_END(Fish)
