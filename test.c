@@ -21,7 +21,7 @@ void fly1(struct CanFly *canfly, void *args)
 
 void fly2(struct CanFly *canfly, void *args)
 {
-    if (IS_CLASS(canfly, Bird))
+    if (CPOLY_IS_CLASS(canfly, Bird))
     {
         struct Bird *bird = DYNAMIC_CAST(canfly, Bird, CanFly);
         printf("bird name is %s\n", bird->name);

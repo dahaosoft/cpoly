@@ -6,10 +6,10 @@
         (type *)( (char *)__mptr - CPOLY_OFFSETOF(type, member) ); })
 
 #define DYNAMIC_CAST(ptr, type, member)  \
-    (IS_CLASS(ptr, type) ? CPOLY_CONTAINER_OF(ptr, struct type, member) : NULL)
+    (CPOLY_IS_CLASS(ptr, type) ? CPOLY_CONTAINER_OF(ptr, struct type, member) : NULL)
 #define CPOLY_CLASS_ID(className) className##vtblObj.id
 #define CPOLY_IMPLER_ID_BY_INTERFACE(interface) interface->implerID
-#define IS_CLASS(interfacePtr, className) (CPOLY_IMPLER_ID_BY_INTERFACE(interfacePtr) == CPOLY_CLASS_ID(className))
+#define CPOLY_IS_CLASS(interfacePtr, className) (CPOLY_IMPLER_ID_BY_INTERFACE(interfacePtr) == CPOLY_CLASS_ID(className))
 
 #define CPOLY_BIND_INTERFACE(interface, className) .interface.implerID = (unsigned long long)&className##vtblObj
 
