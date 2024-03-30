@@ -13,8 +13,8 @@ static inline void bird_run()
     printf("bird is running hah\n");
 }
 
-OVERRIDES_BEGIN(Bird)
-    OVERRIDE(CanFly, fly,        Bird, bird_fly),
-    OVERRIDE(CanFly, flyOnWater, Bird, bird_flyOnWater),
-    OVERRIDE(CanRun, run,        Bird, bird_run),
-OVERRIDES_END(Bird) 
+CPOLY_OVERRIDES_BEGIN(Bird)
+    CPOLY_OVERRIDE(CanFly, fly,        Bird, bird_fly),
+    CPOLY_OVERRIDE(CanFly, flyOnWater, Bird, bird_flyOnWater),
+    CPOLY_OVERRIDE(CanRun, run,        Bird, bird_run),
+CPOLY_OVERRIDES_END(Bird) 

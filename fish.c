@@ -13,7 +13,7 @@ static inline void fish_run()
     printf("fish is running hah\n");
 }
 
-OVERRIDES_BEGIN(Fish)
-    OVERRIDE(CanFly, fly, Fish, fish_fly),
-    OVERRIDE(CanFly, flyOnWater, Fish, fish_flyOnWater),
-OVERRIDES_END(Fish)
+CPOLY_OVERRIDES_BEGIN(Fish)
+    CPOLY_OVERRIDE(CanFly, fly, Fish, fish_fly),
+    CPOLY_OVERRIDE(CanFly, flyOnWater, Fish, fish_flyOnWater),
+CPOLY_OVERRIDES_END(Fish)

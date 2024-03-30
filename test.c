@@ -43,22 +43,22 @@ void run1(struct CanRun *canrun, void *args)
 
 int main(int argc, char **argv)
 {
-    DEF_OBJ(Bird, bird1);
+    CPOLY_DEF_OBJ(Bird, bird1);
     bird1.name = "麻雀";
 
-    DEF_OBJ(Fish, fish1);
+    CPOLY_DEF_OBJ(Fish, fish1);
     fish1.name = "鲤鱼";
     fish1.age = 100;
 
-    struct CanFly *canFly = CAST_UP(CanFly, &bird1);
-    struct CanRun *canRun = CAST_UP(CanRun, &bird1);
+    struct CanFly *canFly = CPOLY_CAST_UP(CanFly, &bird1);
+    struct CanRun *canRun = CPOLY_CAST_UP(CanRun, &bird1);
 
     fly1(canFly, &bird1);
     fly2(canFly, &bird1);
     run1(canRun, &bird1);
 
-    struct CanFly *canFly2 = CAST_UP(CanFly, &fish1);
-    // struct CanRun *canRun2 = CAST_UP(CanRun, &fish1);
+    struct CanFly *canFly2 = CPOLY_CAST_UP(CanFly, &fish1);
+    // struct CanRun *canRun2 = CPOLY_CAST_UP(CanRun, &fish1);
 
     fly1(canFly2, &bird1);
     fly2(canFly2, &bird1);

@@ -4,12 +4,12 @@
 #include "canfly.h"
 #include "canrun.h"
 
-CLASS(Bird)
-    IMPL(CanFly);
-    IMPL(CanRun);
-FILES_BEGIN(Bird)
+CPOLY_CLASS(Bird)
+    CPOLY_IMPL(CanFly);
+    CPOLY_IMPL(CanRun);
+CPOLY_FIELD_BEGIN(Bird)
     char *name;
-FILES_END(Bird)
+CPOLY_FIELD_END(Bird)
 
 
 
