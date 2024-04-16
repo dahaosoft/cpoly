@@ -1,5 +1,7 @@
 #pragma once
 
+#include <stdlib.h>
+
 #define CPOLY_OFFSETOF(TYPE, MEMBER) ((size_t) & ((TYPE *)0)->interfaces.MEMBER)
 #define CPOLY_CONTAINER_OF(ptr, type, member) ({          \
         const typeof( ((type *)0)->interfaces.member ) *__mptr = (const typeof( ((type *)0)->interfaces.member ) *)(ptr); \
@@ -56,3 +58,7 @@
 #define CPOLY_DEF_OBJ(className, objName) \
     struct className objName = {    \
         CPOLY_COPY_VTBL(className)}
+
+#define CPOLY_NEW_OBJ(className, objName)                            \
+    struct className *objName = calloc(1, sizeof(struct className)); \
+    objName->interfaces = className##vtblObj
